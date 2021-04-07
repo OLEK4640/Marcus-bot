@@ -1,23 +1,12 @@
-import time
-poczatek = time.monotonic()
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
 import json
-import asyncio
-import aiohttp
-import random
 import os
-from math import floor
-from discord.ext.commands import CheckFailure
-from discord.ext.commands import command, has_permissions, bot_has_permissions
-from math import floor
-import urllib.parse, urllib.request, re
-from typing import Optional
 import datetime
 
-zaufani = [660890966127018036, 767044002209726497]
-nievip = "Hmm... Wygląda na to, że nie jesteś developerem marcusa"
+zaufani = [660890966127018036, 767044002209726497] # Nie używasz tego, po co ci?
+nievip = "Hmm... Wygląda na to, że nie jesteś developerem marcusa" # Tego też nie
+
 
 def get_prefix(client, message):
     with open('prefixes.json', 'r') as f:
@@ -26,8 +15,7 @@ def get_prefix(client, message):
     return prefixes[str(message.guild.id)]
 
 
-bot = commands.Bot(command_prefix= get_prefix, case_insensitive=True)
-
+bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True)
     
 @bot.event
 async def on_ready():
@@ -58,7 +46,7 @@ async def on_guild_remove(guild):
 
         
 @bot.command()
-@has_permissions(administrator=True)
+@commands.has_permissions(administrator=True)
 async def changeprefix(ctx, prefix):
     with open('prefixes.json', 'r') as f:
         prefixes = json.load(f)
@@ -67,6 +55,7 @@ async def changeprefix(ctx, prefix):
 
     with open ('prefixes.json', 'w') as f:
         json.dump(prefixes, f, indent=4)
+
     await ctx.send("""**Pomyślnie zmieniono prefix na {prefix}**""")
 
     
