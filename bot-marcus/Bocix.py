@@ -15,7 +15,8 @@ def get_prefix(client, message):
     return prefixes[str(message.guild.id)]
 
 
-bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True)
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, intents=intents)
     
 @bot.event
 async def on_ready():
