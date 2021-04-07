@@ -1,36 +1,18 @@
 import time
-poczatek = time.monotonic()
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
-import json
 import asyncio
-import aiohttp
 import random
-import os
 from math import floor
-from discord.ext.commands import CheckFailure
-from discord.ext.commands import command, has_permissions, bot_has_permissions
-from math import floor
-import urllib.parse, urllib.request, re
-from typing import Optional
-import datetime
-from asyncio import sleep as s
-from random import randint
-from random import choice as randchoice
 from googlesearch import search
 
 class Rozrywka(commands.Cog):
-
-    def __init__(self, client):
-        self.client = client
-
-    #iwenty
-    @commands.Cog.listener()
-    async def on_ready(self):
+    def __init__(self, bot):
+        self.bot = bot
         print('Komendy rozrywkowe załadowane pomyślnie!.')
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def guessthenumber(self, ctx, max:int=None):
         def guess_check(m):
             return m.content.isdigit() and m.author == ctx.message.author and m.channel == ctx.message.channel
@@ -43,7 +25,7 @@ class Rozrywka(commands.Cog):
         await ctx.reply("**Zacznij zgadywać.**")
         while not zgadnieta:
             try:
-                strzal = await self.client.wait_for('message', timeout=15.0, check=guess_check)
+                strzal = await self.bot.wait_for('message', timeout=15.0, check=guess_check)
             except asyncio.TimeoutError:
                 await ctx.reply("**Czas minął!**")
                 return
@@ -61,21 +43,25 @@ class Rozrywka(commands.Cog):
             elif int(strzal.content) > liczba:
                 await strzal.reply("*Wylosowana liczba jest mniejsza.*")
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def reverse(self, ctx, *, tekst : str):
         tekst = tekst[::-1]
         await ctx.reply(tekst)
+
 
     @reverse.error
     async def reverse_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send('**Zły format komendy! Proszę użyć** `.reverse <tekst>`')
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def botinvite(self, ctx):
         await ctx.reply("https://discord.com/api/oauth2/authorize?client_id=823530891938103366&permissions=0&scope=bot")
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def serverinfo(self, ctx):
         embed = discord.Embed(title="{}".format(ctx.message.guild.name), description="Informacje")
         embed.add_field(name="ID serwera:", value="{}".format(str(ctx.message.guild.id)), inline=True)
@@ -84,23 +70,27 @@ class Rozrywka(commands.Cog):
         embed.set_footer(text=ctx.message.guild.name)
         await ctx.reply(embed=embed)
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def randomize(self, ctx, minimalny : int, maksymalny : int):
         await ctx.reply("Wylosowana liczba to {}.".format(str(random.randint(minimalny, maksymalny))))
+
 
     @randomize.error
     async def randomize_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send('**Zły format komendy! Proszę użyć** `.randomize <liczba> <liczba>`')
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def ping(self, ctx):
         before = time.monotonic()
         message = await ctx.reply("Czekaj...")
         ping = (time.monotonic() - before) * 1000
         await message.edit(content="Pong! :ping_pong: **{}ms**".format(str(floor(ping))))
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def timer(self, ctx, seconds):
         try:
             secondint = int(seconds)
@@ -125,28 +115,28 @@ class Rozrywka(commands.Cog):
         except ValueError:
             await ctx.send("Musisz wpisać numer!")
         
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def say(self, ctx, *, tekst):
         await ctx.send(tekst)
 
+
     @commands.command()
     async def choose(self, ctx, *choices):
-        """Chooses between multiple choices.
-
-        To denote multiple choices, you should use double quotes.
-        """
         if len(choices) < 2:
             await ctx.send('Not enough choices to pick from.')
         else:
             await ctx.send(randchoice(choices))
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def rps(self, ctx, choice : str):
-        """Play rock paper scissors"""
-        author = ctx.message.author
-        rpsbot = {"rock" : ":moyai:",
-           "paper": ":page_facing_up:",
-           "scissors":":scissors:"}
+        author = ctx.author
+        rpsbot = {
+            "rock" : ":moyai:",
+            "paper": ":page_facing_up:",
+            "scissors":":scissors:"
+        }
+        
         choice = choice.lower()
         if choice in rpsbot.keys():
             botchoice = randchoice(list(rpsbot.keys()))
@@ -172,7 +162,8 @@ class Rozrywka(commands.Cog):
         else:
             await ctx.send("Choose rock, paper or scissors.")
 
-    @commands.command(pass_context=True)
+
+    @commands.command()
     async def search_phrase(self, ctx, *, fraza):
         message = await ctx.reply("**Szukam...** :mag:")
         before = time.monotonic()
@@ -181,5 +172,5 @@ class Rozrywka(commands.Cog):
             await message.edit(content="{}\nZnalazłem w **{}ms**".format(url, str(floor(ping))))
             break
 
-def setup(client):
-    client.add_cog(Rozrywka(client))
+def setup(bot):
+    bot.add_cog(Rozrywka(bot))
