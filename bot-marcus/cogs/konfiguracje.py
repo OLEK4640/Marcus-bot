@@ -38,7 +38,7 @@ class configi(commands.Cog):
         with open ('configi.json', 'w') as f:
             json.dump(configi, f, indent=4)
 
-    @commands.Cog.listener
+    @commands.Cog.listener()
     async def on_guild_remove(self, guild):
         with open('configi.json', 'r') as f:
             configi = json.load(f)
