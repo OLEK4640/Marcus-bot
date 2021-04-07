@@ -1,30 +1,13 @@
-import time
-poczatek = time.monotonic()
-import discord
-from discord.ext import commands
-from discord.ext.commands import Bot
 import json
-import asyncio
-import aiohttp
-import random
-import os
-from math import floor
-from discord.ext.commands import CheckFailure
-from discord.ext.commands import command, has_permissions, bot_has_permissions
-from math import floor
-import urllib.parse, urllib.request, re
-from typing import Optional
-import datetime
+import discord
+from discord.ext import commands.Cog
 
-class configi(commands.Cog):
 
-    def __init__(self, client):
-        self.client = client
-
-    #iwenty
-    @commands.Cog.listener()
-    async def on_ready(self):
+class Configi(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
         print('Komendy administracyjne załadowane pomyślnie!.')
+
 
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
@@ -38,6 +21,7 @@ class configi(commands.Cog):
         with open ('configi.json', 'w') as f:
             json.dump(configi, f, indent=4)
 
+
     @commands.Cog.listener()
     async def on_guild_remove(self, guild):
         with open('configi.json', 'r') as f:
@@ -49,8 +33,5 @@ class configi(commands.Cog):
             json.dump(configi, f, indent=4)
 
 
-
-
-
-def setup(client):
-    client.add_cog(configi(client))
+def setup(bot):
+    bot.add_cog(Configi(bot))
