@@ -9,4 +9,4 @@ class Iwenty(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(iwenty(bot))
+    bot.add_cog(Iwenty(bot))
