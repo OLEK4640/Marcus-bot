@@ -5,6 +5,7 @@ import asyncio
 import random
 from math import floor
 from googlesearch import search
+from random import choice as randchoice
 
 class Rozrywka(commands.Cog):
     def __init__(self, bot):

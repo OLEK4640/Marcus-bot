@@ -15,7 +15,14 @@ class Configi(commands.Cog):
             configi = json.load(f)
 
         configi[str(guild.id)] = {
-            "joinmsgchannel" : "216136"
+            "joinmsgchannel" : "Null",
+            "joinmsgcolor" : "Null",
+            "joinmsgtitle" : "Null",
+            "joinmsgdescription" : "Null",
+            "leavemsgchannel" : "Null",
+            "leavemshcolor" : "Null",
+            "leavemsgtitle" : "Null",
+            "joinmsgdesc" : "Null"
         }
 
         with open ('configi.json', 'w') as f:
