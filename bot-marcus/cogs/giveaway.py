@@ -45,7 +45,7 @@ class giveaway(commands.Cog):
             await ctx.send(i)
 
             try:
-                msg = await self.bot.wait_for('message, timeout=15.0, check=check')
+                msg = await self.bot.wait_for('message', timeout=15.0, check=check)
             except asyncio.TimeoutError:
                 await ctx.send("nie odpowiedziałeś w odpowiednim czasie!")
                 return
