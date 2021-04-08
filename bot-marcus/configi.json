@@ -1,8 +1,12 @@
 {
     "823506817782775808": {
-        "joinmsgchannel": "823530799050784859"
-    },
-    "781970995505397780": {
-        "joinmsgchannel": "781984102362513499"
+        "joinmsgchannel": "829653100394446868",
+        "joinmsgcolor": "34eb6b",
+        "joinmsgtitle": "Witaj!",
+        "joinmsgdescription": "Ktoś właśnie wbił na serwer!",
+        "leavemsgchannel": "Null",
+        "leavemshcolor": "Null",
+        "leavemsgtitle": "Null",
+        "joinmsgdesc": "Null"
     }
 }
