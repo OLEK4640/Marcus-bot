@@ -120,7 +120,10 @@ class Rozrywka(commands.Cog):
 
     @commands.command()
     async def say(self, ctx, *, tekst):
-        await ctx.send(tekst)
+        if "jestem glupi" in tekst:
+            await ctx.send("Wiem xD")
+        else:
+            await ctx.send(tekst)
 
 
     @commands.command()

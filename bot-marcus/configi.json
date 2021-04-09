@@ -4,9 +4,10 @@
         "joinmsgcolor": "0x34eb6b",
         "joinmsgtitle": "Witaj!",
         "joinmsgdescription": "{} właśnie wbił na serwer!",
-        "leavemsgchannel": "Null",
-        "leavemshcolor": "Null",
-        "leavemsgtitle": "Null",
-        "joinmsgdesc": "Null"
+        "leavemsgchannel": "830066752997687336",
+        "leavemshcolor": "0xff0000",
+        "leavemsgtitle": "Naura",
+        "joinmsgdesc": "{} Właśnie wyszedł z servera :|",
+        "kanalpropozycje" : "824982431785418772"
     }
 }

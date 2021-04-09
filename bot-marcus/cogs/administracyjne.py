@@ -15,7 +15,7 @@ class Administracyjne(commands.Cog):
             if not ctx.author.guild_permissions.manage_messages:
                 return await ctx.send("Nie masz permisji do tego!")
 
-            await ctx.purge(limit=ilosc)
+            await ctx.channel.purge(limit=ilosc)
             msg = await ctx.send("✅ **Usunąłem {} wiadomości!**".format(str(ilosc)))
             await asyncio.sleep(3)
             await msg.delete()

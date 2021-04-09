@@ -15,14 +15,15 @@ class Configi(commands.Cog):
             configi = json.load(f)
 
         configi[str(guild.id)] = {
-            "joinmsgchannel" : "Null",
-            "joinmsgcolor" : "Null",
-            "joinmsgtitle" : "Null",
-            "joinmsgdescription" : "Null",
-            "leavemsgchannel" : "Null",
-            "leavemshcolor" : "Null",
-            "leavemsgtitle" : "Null",
-            "joinmsgdesc" : "Null"
+            "joinmsgchannel" : "null",
+            "joinmsgcolor" : "null",
+            "joinmsgtitle" : "null",
+            "joinmsgdescription" : "null",
+            "leavemsgchannel" : "null",
+            "leavemshcolor" : "null",
+            "leavemsgtitle" : "null",
+            "joinmsgdesc" : "null",
+            "kanalpropozycje" : "null"
         }
 
         with open ('configi.json', 'w') as f:
@@ -38,22 +39,6 @@ class Configi(commands.Cog):
 
         with open ('configi.json', 'w') as f:
             json.dump(configi, f, indent=4)
-
-    
-    @commands.command()
-    @commands.has_permissions(administrator=True)
-    async def changechannel(self, ctx, id):
-        with open('configi.json', 'r') as f:
-            configi = json.load(f)
-
-        configi[str(ctx.guild.id)] = {
-            "joinmsgchannel" : id
-        }
-
-        with open ('configi.json', 'w') as f:
-            json.dump(configi, f, indent=4)
-
-        await ctx.send("""**Sukces!**""")
 
 
 def setup(bot):
