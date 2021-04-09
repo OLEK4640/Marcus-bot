@@ -76,6 +76,7 @@ class Administracyjne(commands.Cog):
         else:
             await ctx.reply("**Niestety nie posiadasz permisji do tego!**")
 
+
     @ban.error
     async def ban_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
@@ -100,6 +101,7 @@ class Administracyjne(commands.Cog):
                 await ctx.reply("Wystąpił błąd: \n```{}: {}```\n".format(type(e).__name__, e))
         else:
             await ctx.reply("**Niestety nie posiadasz permisji do tego!**")
+
 
     @unban.error
     async def unban_error(self, ctx, error):

@@ -7,6 +7,7 @@ from math import floor
 from googlesearch import search
 from random import choice as randchoice
 
+
 class Rozrywka(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -129,6 +130,7 @@ class Rozrywka(commands.Cog):
         else:
             await ctx.send(randchoice(choices))
 
+
     @commands.command()
     async def rps(self, ctx, choice : str):
         author = ctx.author
@@ -172,6 +174,7 @@ class Rozrywka(commands.Cog):
             ping = (time.monotonic() - before) * 1000
             await message.edit(content="{}\nZnalazłem w **{}ms**".format(url, str(floor(ping))))
             break
+
 
 def setup(bot):
     bot.add_cog(Rozrywka(bot))
