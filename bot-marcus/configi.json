@@ -3,7 +3,7 @@
         "joinmsgchannel": "829654281526837260",
         "joinmsgcolor": "0x34eb6b",
         "joinmsgtitle": "Witaj!",
-        "joinmsgdescription": "Ktoś właśnie wbił na serwer!",
+        "joinmsgdescription": "{} właśnie wbił na serwer!",
         "leavemsgchannel": "Null",
         "leavemshcolor": "Null",
         "leavemsgtitle": "Null",
