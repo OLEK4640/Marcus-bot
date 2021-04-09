@@ -16,7 +16,7 @@ class Join(commands.Cog):
             config_data = json.load(configjsonFile)
 
         kanal_id = int(config_data[str(member.guild.id)]["joinmsgchannel"])
-        kolor_hex = int(config_data[str(member.guild.id)]["joinmsgcolor"])
+        kolor_hex = int(config_data[str(member.guild.id)]["joinmsgcolor"], 16)
         titel_join = int(config_data[str(member.guild.id)]["joinmsgtitle"])
         deskripszon = int(config_data[str(member.guild.id)]["joinmsgdescription"])
         embed = discord.Embed(title=titel_join, description=deskripszon, color=kolor_hex)
