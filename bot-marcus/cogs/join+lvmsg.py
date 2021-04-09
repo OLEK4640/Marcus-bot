@@ -18,7 +18,7 @@ class Join(commands.Cog):
         kanal_id = int(config_data[str(member.guild.id)]["joinmsgchannel"])
         kolor_hex = int(config_data[str(member.guild.id)]["joinmsgcolor"], 16)
         titel_join = config_data[str(member.guild.id)]["joinmsgtitle"]
-        deskripszon = config_data[str(member.guild.id)]["joinmsgdescription"]
+        deskripszon = config_data[str(member.guild.id)][f"joinmsgdescription"]
         embed = discord.Embed(title=titel_join, description=deskripszon, color=kolor_hex)
         channel = self.bot.get_channel(kanal_id)
         await channel.send(embed=embed)
