@@ -62,6 +62,5 @@ class Join(commands.Cog):
         channel = self.bot.get_channel(kanal_id)
         await channel.send(embed=embed)
 
-
 def setup(bot):
     bot.add_cog(Join(bot))

@@ -3,11 +3,84 @@
         "joinmsgchannel": "829654281526837260",
         "joinmsgcolor": "0x34eb6b",
         "joinmsgtitle": "Witaj!",
-        "joinmsgdescription": "{} właśnie wbił na serwer!",
+        "joinmsgdescription": "{} w\u0139\u201aa\u0139\u203anie wbi\u0139\u201a na serwer!",
         "leavemsgchannel": "830066752997687336",
         "leavemshcolor": "0xff0000",
         "leavemsgtitle": "Naura",
-        "joinmsgdesc": "{} Właśnie wyszedł z servera :|",
-        "kanalpropozycje" : "824982431785418772"
+        "joinmsgdesc": "{} W\u0139\u201aa\u0139\u203anie wyszed\u0139\u201a z servera :|",
+        "kanalpropozycje": "824982431785418772",
+        "muterolename": "null"
+    },
+    "534082218864410630": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "null",
+        "muterolename": "null"
+    },
+    "818147487222202368": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "null",
+        "muterolename": "null"
+    },
+    "781970995505397780": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "782210529833123871",
+        "muterolename": "null"
+    },
+    "530429196481331221": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "null",
+        "muterolename": "null"
+    },
+    "726690622756487180": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "null",
+        "muterolename": "null"
+    },
+    "829239780318642206": {
+        "joinmsgchannel": "null",
+        "joinmsgcolor": "null",
+        "joinmsgtitle": "null",
+        "joinmsgdescription": "null",
+        "leavemsgchannel": "null",
+        "leavemshcolor": "null",
+        "leavemsgtitle": "null",
+        "joinmsgdesc": "null",
+        "kanalpropozycje": "null",
+        "muterolename": "null"
     }
 }

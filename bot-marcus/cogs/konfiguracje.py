@@ -23,7 +23,8 @@ class Configi(commands.Cog):
             "leavemshcolor" : "null",
             "leavemsgtitle" : "null",
             "joinmsgdesc" : "null",
-            "kanalpropozycje" : "null"
+            "kanalpropozycje" : "null",
+            "muterolename" : "null"
         }
 
         with open ('configi.json', 'w') as f:
