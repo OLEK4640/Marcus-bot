@@ -11,7 +11,7 @@ colors = [0xFFE4E1, 0x00FF7F, 0xD8BFD8, 0xDC143C, 0xFF4500, 0xDEB887, 0xADFF2F, 
 class Join(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        print('Komendy administracyjne załadowane pomyślnie!.')
+        print('join+lvmsg załadowane pomyślnie!.')
 
 
     @commands.Cog.listener()
